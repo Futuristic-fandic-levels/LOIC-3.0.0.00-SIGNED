@@ -1,6 +1,6 @@
 #!/bin/bash
-# Copyfuck © 2010 q
-# Edited by NewEraCracker
+# Copyright © 2010 
+# Edited by futuristic-fandic-levels
 #
 # This script installs, updates and runs LOIC on Linux.
 #
