@@ -1,4 +1,4 @@
-# LOIC-3.0.0.00-SIGNED
+# LOIC-3.0.0.00-SIGNED REBUILT VERSION-3.0.0.00
 
 
 LOIC (Low Orbit Ion Cannon) – Node.js Rebuild
