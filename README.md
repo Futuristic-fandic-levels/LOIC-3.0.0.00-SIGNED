@@ -1,1 +1,40 @@
 # LOIC-3.0.0.00-SIGNED
+
+
+LOIC (Low Orbit Ion Cannon) – Node.js Rebuild
+A high-volume HTTP flood stress testing tool rebuilt from the original source code. Designed to test the resilience of web servers under heavy load by simulating multiple concurrent users.
+
+🚀 Features
+HTTP/HTTPS Flood: Sends massive numbers of GET/POST requests to a target URL.
+Node.js Based: Lightweight, cross-platform (Windows, Linux, macOS), and easy to modify.
+Configurable: Adjust thread count, request method, and target URL via command line or config file.
+User-Agent Rotation: Randomizes browser headers to mimic legitimate traffic and evade simple rate limits.
+🛠️ How It Works
+LOIC overwhelms a target server by opening thousands of concurrent connections. By sending continuous HTTP requests, it consumes the server’s bandwidth and connection limits, potentially causing a Denial of Service (DoS) condition.
+
+Note: This is an HTTP-level flood, not a TCP/UDP flood. It is ideal for testing web application layer (Layer 7) scalability.
+
+⚠️ Disclaimer
+Use at Your Own Risk.
+
+Target Selection: Ensure you have permission from the owner of the target server before launching a flood. Unauthorized flooding may violate Terms of Service or local laws (e.g., CFAA in the US).
+Impact: This tool can significantly increase server load, bandwidth usage, and CPU usage on the target. It may cause downtime for other users on the same server.
+Liability: The developer of this rebuilt version is not responsible for any damage, data loss, or service interruptions caused by the use of this software.
+Identification: While LOIC randomizes headers, it is still identifiable by advanced traffic analysis. Do not assume it makes you "invisible."
+📦 Installation
+Copy
+git clone <>
+cd loic-rebuilt
+npm install
+▶️ Usage
+Copy
+node loic.js -u https://target.com -t 100 -m GET
+-u: Target URL
+-t: Number of threads/connections
+-m: Method (GET/POST)
+📜 License
+MIT License (or your preferred license)
+
+
+
+NoTrack AI — https://notrack.ai/
