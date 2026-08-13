@@ -1,6 +1,6 @@
 #!/bin/bash
-# Copyfuck © 2010 q
-# Edited by NewEraCracker
+# Copyied © 2010 q
+# Credits to NewEraCracker
 #
 # This script installs, updates and runs LOIC on Linux.
 #
@@ -12,7 +12,7 @@
 # Usage: bash ubuntu_loic.bash <install|update|run>
 #
 
-GIT_REPO=http://github.com/NewEraCracker/LOIC.git
+GIT_REPO=http://github.com/NewEraCracker/LOIC.git    ////credits to New Era Cracker who inspired me to update this
 GIT_BRANCH=master
 
 DEB_MONO_PKG="monodevelop liblog4net-cil-dev mono-devel"
