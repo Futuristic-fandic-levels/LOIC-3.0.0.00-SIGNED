@@ -1,40 +1,82 @@
-# LOIC-3.0.0.00-SIGNED REBUILT VERSION-3.0.0.00
+## INFO
 
+Low Orbit Ion Cannon - An open source network stress tool, written in C#.
+Based on Praetox's LOIC project at https://sourceforge.net/projects/loic/
 
-LOIC (Low Orbit Ion Cannon) – Node.js Rebuild
-A high-volume HTTP flood stress testing tool rebuilt from the original source code. Designed to test the resilience of web servers under heavy load by simulating multiple concurrent users.
+## DISCLAIMER
 
-🚀 Features
-HTTP/HTTPS Flood: Sends massive numbers of GET/POST requests to a target URL.
-Node.js Based: Lightweight, cross-platform (Windows, Linux, macOS), and easy to modify.
-Configurable: Adjust thread count, request method, and target URL via command line or config file.
-User-Agent Rotation: Randomizes browser headers to mimic legitimate traffic and evade simple rate limits.
-🛠️ How It Works
-LOIC overwhelms a target server by opening thousands of concurrent connections. By sending continuous HTTP requests, it consumes the server’s bandwidth and connection limits, potentially causing a Denial of Service (DoS) condition.
+This tool is released for educational purposes only, with the intent of helping server owners develop a "Hacker Defense" attitude. This tool comes without any warranty at all.
 
-Note: This is an HTTP-level flood, not a TCP/UDP flood. It is ideal for testing web application layer (Layer 7) scalability.
+**You may not use this software for any illegal or unethical purpose; including activities which would give rise to criminal or civil liability.**
 
-⚠️ Disclaimer
-Use at Your Own Risk.
+**Under no event shall the Licensor be responsible for the activities, or any misdeeds, conducted by the Licensee.**
 
-Target Selection: Ensure you have permission from the owner of the target server before launching a flood. Unauthorized flooding may violate Terms of Service or local laws (e.g., CFAA in the US).
-Impact: This tool can significantly increase server load, bandwidth usage, and CPU usage on the target. It may cause downtime for other users on the same server.
-Liability: The developer of this rebuilt version is not responsible for any damage, data loss, or service interruptions caused by the use of this software.
-Identification: While LOIC randomizes headers, it is still identifiable by advanced traffic analysis. Do not assume it makes you "invisible."
-📦 Installation
-Copy
-git clone <>
-cd loic-rebuilt
-npm install
-▶️ Usage
-Copy
-node loic.js -u https://target.com -t 100 -m GET
--u: Target URL
--t: Number of threads/connections
--m: Method (GET/POST)
-📜 License
-MIT License (or your preferred license)
+## HOW TO RUN ON WINDOWS
 
+GET THE BINARIES!
 
+Requires Microsoft .NET Framework 3.5 Service Pack 1, available at:
+http://www.microsoft.com/downloads/en/details.aspx?FamilyID=ab99342f-5d1a-413d-8319-81da479ab0d7&displaylang=en
 
-NoTrack AI — https://notrack.ai/
+## HOW TO RUN ON LINUX / MACOSX
+
+Run debug binaries with mono.
+Read the wiki at https://github.com/NewEraCracker/LOIC/wiki/ for updated instructions.
+
+## HIVEMIND/HIDDEN MODE
+
+HIVEMIND mode will connect your client to an IRC server so it can be controlled remotely.
+Think of this as a voluntary botnet (though do beware that your client can potentially be
+made to do naughty things).
+
+Note: It does NOT allow remote administration of your machine, or anything like that; it
+is literally just control of loic itself.
+
+If you want to start up in Hivemind mode, run something like this:
+```
+	LOIC.exe /hivemind irc.server.address
+```
+It will connect to irc://irc.server.adress:6667/loic
+
+You can also specify a port and channel:
+```
+	LOIC.exe /hivemind irc.server.address 1234 #secret
+```
+It will connect to irc://irc.server.adress:1234/secret
+
+In order to do Hivemind Hidden mode, run something like this:
+```
+	LOIC.exe /hidden /hivemind irc.server.address
+```
+It will connect to irc://irc.server.adress:6667/loic without any visible GUI.
+
+## CONTROLLING LOIC FROM IRC
+
+As an OP, Admin or Owner, set the channel topic or send a message like the following:
+```
+	!lazor targetip=127.0.0.1 message=test_test port=80 method=tcp wait=false random=true
+```
+
+To start an attack, type:
+```
+	!lazor start
+```
+
+Or just append "start" to the END of the topic:
+```
+	!lazor targetip=127.0.0.1 message=test_test port=80 method=tcp wait=false random=true start
+```
+
+To reset loic's options back to its defaults:
+```
+	!lazor default
+```
+
+To stop an attack:
+```
+	!lazor stop
+```
+
+and be sure to remove "start" from the END of the topic, if it exists, too.
+
+Take a look at source code for more details.
